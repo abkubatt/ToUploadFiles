@@ -22,7 +22,7 @@ public class FileController {
     private FileService fileService;
 
     @PostMapping("/upload")
-    public Response upload(@RequestParam MultipartFile file){
+    public Response upload(@RequestPart MultipartFile file){
         String fileName = fileService.storeFile(file);
 
         String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
